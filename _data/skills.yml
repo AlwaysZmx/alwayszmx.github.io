@@ -1,9 +1,11 @@
 - name: Software Engineer Keywords
   keywords:
       - Java
-      - C++
-      - Python
-      - Design Patterns
+      - JavaScript
+      - JVM
+      - spring
+      - sringboot
+      - springcloud
 
 - name: Mobile Developer Keywords
   keywords:
