@@ -550,7 +550,7 @@ public final class ActivityThread {
 
 ---
 
-最后，照例要安利一下我的微信公众号「闷骚的程序员」，扫码关注，接收 rtfsc-android 的最近更新。
+最后，照例要安利一下我的微信公众号「码上行旅」，扫码关注，接收 rtfsc-android 的最近更新。
 
 <div align="center"><img width="192px" height="192px" src="https://mazhuang.org/assets/images/qrcode.jpg"/></div>
 

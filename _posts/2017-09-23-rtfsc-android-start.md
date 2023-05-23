@@ -109,7 +109,7 @@ Toast
 
 大致思路就是这样，实践一阵试试。不知道自顶向下的方法是否走得下去，要是实在不行，还是乖乖回去跟着老罗的脚步学习吧。
 
-开篇，就当先立个 Flag 在这里，万一坚持做下去了呢，牛皮都不敢吹还哪敢做成什么事啊，最次也「世上无难事，只要肯放弃」嘛。对此有兴趣的朋友，请关注我的微信公众号「闷骚的程序员」，一起 Read The F\*cking Android Source Code。
+开篇，就当先立个 Flag 在这里，万一坚持做下去了呢，牛皮都不敢吹还哪敢做成什么事啊，最次也「世上无难事，只要肯放弃」嘛。对此有兴趣的朋友，请关注我的微信公众号「码上行旅」，一起 Read The F\*cking Android Source Code。
 
 <div align="center"><img width="192px" height="192px" src="https://mazhuang.org/assets/images/qrcode.jpg"/></div>
 
