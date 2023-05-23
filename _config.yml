@@ -24,7 +24,7 @@ components:
     # weibo,qq,wechat,douban,qzone,linkedin,facebook,twitter
     share:
         enabled: true
-        hide-platforms: 
+        hide-platforms: google,wechat
     # 不蒜子访问统计
     busuanzi:
         enabled: false
@@ -98,6 +98,10 @@ navs:
     href: /links/
     label: 链接
     mobile-hidden: true
+
+  -
+    href: https://stack.weblab.top
+    label: 导航
 
   -
     href: /about/
