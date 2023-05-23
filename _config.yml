@@ -100,11 +100,11 @@ navs:
     mobile-hidden: true
 
   -
-    href: https://stack.weblab.top/
+    href: /stack/
     label: 导航
 
   -
-    href: /chat.html
+    href: /chatai/
     label: AI助手
 
   -
