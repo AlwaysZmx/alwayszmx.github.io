@@ -23,7 +23,7 @@ permalink: /about/
 
 <li>
 微信公众号：<br />
-<img style="height:192px;width:192px;border:1px solid lightgrey;" src="https://alwayszmx.github.io/assets/images/qrcode.jpg" alt="码上行旅" />
+<img style="height:192px;width:192px;border:1px solid lightgrey;" src="{{ site.url }}/assets/images/qrcode.jpg" alt="码上行旅" />
 </li>
 
 </ul>
