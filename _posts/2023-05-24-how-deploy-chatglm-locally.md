@@ -51,7 +51,7 @@ topmost: true
 
 ChatGLM-6B 开源双语对话语言模型，太牛皮了！我要能做一个这个水平的东西，我就AI创业，融资、赚钱、发财，躺平去！哈哈哈！—— 真好，看到这样一个东西，感觉看到了国内 AI 的希望！感谢清华 ChatGLM 团队。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba52MLnJYVIOjIDib2IK4FLfvNPmsibjlX4iaOPiaKjNP9JG0sWKHHtjYZ4bA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/1.png)
 
 ChatGLM-6B 是清华开源的一个小型对话模型，让大家可以在自己部署起来跑一跑看看效果。但对于本身不是从事此类工作的其他研发伙伴来说，部署这个东西多半都会卡在环境上。所以小傅哥在`本地/云服务`部署体验后，把相关经验分享下，让有需要的伙伴也可以尝尝鲜。
 
@@ -59,7 +59,7 @@ ChatGLM-6B 是清华开源的一个小型对话模型，让大家可以在自己
 
 ChatGLM 参考了 ChatGPT 的设计思路，在千亿基座模型 GLM-130B 中注入了代码预训练，通过有监督微调（Supervised Fine-Tuning）等技术实现人类意图对齐。2022年11月，斯坦福大学大模型中心对全球30个主流大模型进行了全方位的评测，GLM-130B 是亚洲唯一入选的大模型👍🏻。
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba5icy3CSsGyztqbI9qaMviaTqeQ10LfrgDuGp9pv3256Qj4vsU8k4s38Ig/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/2.png)
 
 同时 ChatGLM 团队为与社区一起更好地推动大模型技术的发展，清华开源了 ChatGLM-6B 模型。它是一个初具中文问答和对话功能的小型模型，可以让大家即使在本地和一些小型的服务器上就可以部署体验。
 
@@ -80,13 +80,13 @@ ChatGLM-6B 虽然已经是很温馨提供的，能最佳支持对话的最小模
 
 小傅哥自己也是在 `Mac M1`、`轻量云主机`，还有一个专门用于测试`AIGC的服务器`上，都做了测试验证，这样也能避免大家走弯路。就像我在一款8G内存的轻量云主机上，部署 INT4 模型，报错如下；
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba5klRa24JW1LcD7ohhicCqcEFia5OTYorhagErurE8FBKX0nPYmcZlf3dQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/3.png)
 
 😂 所以别买一些配置不佳的机器，否则你根本跑不起来，还浪费钱。
 
 ### 2. 工程代码
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba5eHo864oVB3RibL5BibxHkhWGBjA7SkkeYevZHyusL7uCiaXHC5wkkVupA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/4.png)
 
 源码：https://github.com/THUDM/ChatGLM-6B - 无论你使用哪种部署方式，都需要把代码下载到对应的服务上。
 
@@ -100,7 +100,7 @@ tokenizer = AutoTokenizer.from_pretrained("/Users/xfg/develop/github/chatglm-6b"
 model = AutoModel.from_pretrained("/Users/xfg/develop/github/chatglm-6b", trust_remote_code=True).half().cuda()
 ```
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba5Yw99bo1qgJDicJxicqBIjibicC62JcktnicWd8QwlrRnvs7z0IP7sZe3QXw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/5.png)
 
 官网：https://huggingface.co/ - 提供模型下载，按照你的需要下载对应的测试模型到服务器上；
 
@@ -117,7 +117,7 @@ model = AutoModel.from_pretrained("/Users/xfg/develop/github/chatglm-6b", trust_
 
 ### 4. 软件版本
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/6.png)
 
 - macOS 12.3 或更高版本 - https://developer.apple.com/metal/pytorch
 - Python 3.10.8 或更高版本 - 因为有些聊天的界面模块，需要这个版本。
@@ -138,7 +138,7 @@ whereis openssl |xargs rm -frv
 
 以能运行起 ChatGLM-6B 只需要以下5个步骤；
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/7.png)
 
 只要你能按照顺序，正确的执行这些步骤，就可以运行起 ChatGLM-6B 模型，接下来就跟着小傅哥的步骤执行吧。注意如果你需要绘图能力，可以在本文学习后。按照官网介绍，替换下模型重新启动即可；https://github.com/THUDM/ChatGLM-6B - `[2023/05/17] 发布` VisualGLM-6B `一个支持图像理解的多模态对话语言模型。`
 
@@ -345,33 +345,33 @@ Loading checkpoint shards: 100%|████████████████
 
 ### 2. 选择服务
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/8.png)
 
 - ￥1.90/时，不确定一直有。同配置的4.9元每小时。从你购买启动开始计费，安装环境较好时，整个过程需要大概需要20元左右，能体验到。
 
 ### 3. 配置环境
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/9.png)
 
 - 创建服务后，运行镜像选择；pytorch -> cuda 最后这个版本。
 - 预训练模型选择 chatglm-6b 这样你也不需要自己下载模型数据了。
 
 ### 4. 控制平台
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/10.png)
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/11.png)
 
 - 从工作空间进入到控制台，你可以分别`从 data 看到 ChatGLM-6B 的代码` 在`imported_models 看到预训练模型 chatglm-6b`
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/12.png)
 
 - 检查工程 web_demo2.py 中加载模型的路径是否正确，如果不对需要修改。
 - 如果你的服务中，没有默认下载或者需要重新下载。那么你可以安装 git 指令，下载代码到 data 仓库即可。
 
 ### 5. 初始配置
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/13.png)
 
 ```shell
 user@lsp-ws:~/data$ sudo su
@@ -383,7 +383,7 @@ root@lsp-ws:/home/user/data/ChatGLM-6B# pip install -r requirements.txt
 
 ### 6. 启动服务
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba56OqxxwDaPymicLp6MwDOUB0b9wI54UFAstHaoG5jvBBJ23YwUichOqbA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/14.png)
 
 ```shell
 python3 -m streamlit run ./web_demo2.py --server.port 27777 --server.address 0.0.0.0
@@ -399,21 +399,21 @@ curl -X POST "http://127.0.0.1:8000" \
 
 ### 7. 访问服务
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba5gyQ11T4CjnVY3ZGuMB7UMXjXxrWMPIXExhOVCXQRJvQ4dgic8ibN9uhA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/15.png)
 
 - 回到控制台复制调试地址，即可访问；
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/zTfAIs5rNXiaMzibwYuZnVjFxpCYFEpba5yGDFb24TBgNHMQWNlfMMY25tRF94Be7Dib9t4rY2zCEJWD8rw2aDD8g/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![](/images/posts/chatgpt/16.png)
 
 - 如果你报错了，那么在控制台执行安装即可。
 - `control + c` 停止服务，执行 `pip install icetk`
 - 再次执行步骤6启动服务，现在在访问。`python3 -m streamlit run ./web_demo2.py --server.port 27777 --server.address 0.0.0.0`
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/17.png)
 
 - 初次运行，它会加载模型。在控制台可以看到加载的模型进度，大概几分钟就加载好了。
 
-![图片](data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='1px' height='1px' viewBox='0 0 1 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Ctitle%3E%3C/title%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' fill-opacity='0'%3E%3Cg transform='translate(-249.000000, -126.000000)' fill='%23FFFFFF'%3E%3Crect x='249' y='126' width='1' height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)
+![](/images/posts/chatgpt/18.png)
 
 - 看到控制台的模型加载完毕后，再次点击下发送 好了，到你也可以测试下发送其他的内容，进行体验。
 
@@ -656,6 +656,7 @@ python cli_demo.py
 ```
 
 不出意外，在命令执行完之后你将可以体验到清华开源的ChatGLM-6B自然语言模型了。
+
 原文：https://mp.weixin.qq.com/s/dIsANmzmJu0a8pl138kyQQ
 
 <center>- END -<center/>
