@@ -11,6 +11,7 @@ mathjax: false
 mindmap: false
 mindmap2: false
 topmost: true
+copyright: false
 ---
 
 ChatGLM-6B 是清华开源的一个小型对话模型，让大家可以在自己部署起来跑一跑看看效果。但对于本身不是从事此类工作的其他研发伙伴来说，部署这个东西多半都会卡在环境上。所以小傅哥在`本地/云服务`部署体验后，把相关经验分享下，让有需要的伙伴也可以尝尝鲜。
