@@ -19,7 +19,7 @@ topmost: false
 
 所以，整套内网穿透的方案大致如下：
 
-![img](https://bra.live/content/images/2022/12/image.png)
+![](/images/posts/cloudflare/1.png)
 
 
 
@@ -114,7 +114,7 @@ cloudflared tunnel route dns webserver-1 www.abc.com
 12345-123-123-123-12345.cfargotunnel.com
 ```
 
-![img](https://bra.live/content/images/2022/12/CleanShot-2022-12-09-at-18.05.30@2x.png)
+![](/images/posts/cloudflare/2.png)
 
 按照上面的说明和图片，我们一条条记录加好。
 
@@ -180,7 +180,7 @@ cloudflared --loglevel debug --transport-loglevel warn --config ~/.cloudflared/c
 
 我们登陆Cloudflare Zero Trust的[Web控制台](https://one.dash.cloudflare.com/?ref=bra.live)，左边选择Access-Tunnels，可以看到隧道已经跑起来了，状态是Active。
 
-![img](https://bra.live/content/images/2022/12/CleanShot-2022-12-09-at-18.27.43@2x.png)
+![](/images/posts/cloudflare/3.png)
 
 然后，我们在浏览器里面输入域名，正常情况下，你可以看到网站已经可以正常访问了。done
 
