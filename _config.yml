@@ -103,9 +103,9 @@ navs:
     href: /stack/
     label: 导航
 
-#  -
-#    href: /chatai/
-#    label: AI助手
+  -
+    href: /chatai/
+    label: AI助手
 
   -
     href: /about/
