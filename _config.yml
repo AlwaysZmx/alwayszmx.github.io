@@ -94,10 +94,10 @@ navs:
     href: /wiki/
     label: 维基
 
-#  -
-#    href: /links/
-#    label: 友链
-#    mobile-hidden: true
+  -
+    href: /links/
+    label: 友链
+    mobile-hidden: true
 
   -
     href: /stack/
