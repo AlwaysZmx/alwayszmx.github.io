@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一文教你本地部署ChatGLM-6B开源双语对话语言模型
+title: 基于CenOS7搭建Java开发环境
 categories: [Java]
 description: 本文主要介绍如何基于CentOS7搭建一个Java开发环境，以及常用软件的安装及卸载。
 keywords: Java, JDK, Maven, MySQL, Nginx, Docker
