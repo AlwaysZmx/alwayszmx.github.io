@@ -56,10 +56,10 @@ yum install -y telnet telnet-server net-tools
 # 二、安装JDK
 
 - 下载JDK
-官方下载：https://www.oracle.com/java/technologies/downloads/#java8
+  官方下载：https://www.oracle.com/java/technologies/downloads/#java8
 
 - 安装JDK
-上传JDK安装包至服务器home目录，执行解压安装包命令
+  上传JDK安装包至服务器home目录，执行解压安装包命令
 ```shell
 tar -zxvf jdk-8u261-linux-x64.tar.gz
 ```
@@ -86,7 +86,7 @@ source /etc/profile
 ```
 
 - 验证
-执行java -version命令，判断环境变量配置是否生效
+  执行java -version命令，判断环境变量配置是否生效
 ```shell
 [root@ydgeiosz3bpsykjo local]# java -version
 java version "1.8.0_261"
@@ -101,7 +101,7 @@ wget https://dlcdn.apache.org/maven/maven-3/3.9.2/binaries/apache-maven-3.9.2-bi
 ```
 
 - 安装Maven
-解压安装包
+  解压安装包
 ```shell
 tar -zxvf apache-maven-3.9.2-bin.tar.gz
 ```
@@ -111,9 +111,9 @@ mv apache-maven-3.9.2/ /usr/local/
 ```
 
 - 配置环境变量
-编辑/etc/profile，并将以下内容粘贴到/etc/profile文件的尾部：
+  编辑/etc/profile，并将以下内容粘贴到/etc/profile文件的尾部：
 ```shell
-MAVEN_HOME=/usr/local/apache-maven-3.8.6
+MAVEN_HOME=/usr/local/apache-maven-3.9.2
 PATH=$MAVEN_HOME/bin:$PATH
 export MAVEN_HOME PATH
 ```
@@ -123,14 +123,46 @@ source /etc/profile
 ```
 
 - 验证
-执行mvn -v命令，判断环境变量配置是否生效
+  执行mvn -v命令，判断环境变量配置是否生效
 ```shell
 [root@ydgeiosz3bpsykjo local]# mvn -v
-Apache Maven 3.8.6 (84538c9988a25aec085021c365c560670ad80f63)
-Maven home: /usr/local/apache-maven-3.8.6
+Apache Maven 3.9.2 (84538c9988a25aec085021c365c560670ad80f63)
+Maven home: /usr/local/apache-maven-3.9.2
 Java version: 1.8.0_261, vendor: Oracle Corporation, runtime: /usr/local/jdk1.8.0_261/jre
 Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "3.10.0-1160.88.1.el7.x86_64", arch: "amd64", family: "unix"
+```
+
+- 修改配置
+
+```shell
+vi /usr/local/apache-maven-3.9.2/conf/settings.xml
+```
+
+将settings.xml中以下配置文件的注释去掉，并将<localRepository>标签内的路径修改为依赖的下载保存路径
+```xml
+<!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ${user.home}/.m2/repository
+  <localRepository>/path/to/local/repo</localRepository>
+  -->
+```
+
+将以下内容粘贴到settings.xml文件的<mirrors>标签内
+```xml
+<mirror>
+    <id>alimaven</id>
+    <mirrorOf>central</mirrorOf>
+    <name>aliyun maven</name>
+    <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+</mirror>
+<mirror>
+    <id>alimaven</id>
+    <name>aliyun maven</name>
+    <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    <mirrorOf>central</mirrorOf>
+</mirror>
 ```
 
 # 四、安装MySQL
@@ -191,7 +223,7 @@ FLUSH PRIVILEGES;
 ```
 
 - 设置开机自启动
-先退出mysql命令行，然后输入以下命令
+  先退出mysql命令行，然后输入以下命令
 ```shell
 systemctl enable mysqld
 systemctl daemon-reload
@@ -440,23 +472,23 @@ systemctl status docker
 - 验证
 
 ```shell
-[root@iZ7xv8p8qxpbzcvlgcikvuZ ~]# docker version
+[root@ydgeiosz3bpsykjo ~]# docker version
 Client: Docker Engine - Community
- Version:           23.0.6
- API version:       1.42
- Go version:        go1.19.9
- Git commit:        ef23cbc
- Built:             Fri May  5 21:21:29 2023
+ Version:           24.0.2
+ API version:       1.43
+ Go version:        go1.20.4
+ Git commit:        cb74dfc
+ Built:             Thu May 25 21:55:21 2023
  OS/Arch:           linux/amd64
  Context:           default
 
 Server: Docker Engine - Community
  Engine:
-  Version:          23.0.6
-  API version:      1.42 (minimum version 1.12)
-  Go version:       go1.19.9
-  Git commit:       9dbdbd4
-  Built:            Fri May  5 21:20:38 2023
+  Version:          24.0.2
+  API version:      1.43 (minimum version 1.12)
+  Go version:       go1.20.4
+  Git commit:       659604f
+  Built:            Thu May 25 21:54:24 2023
   OS/Arch:          linux/amd64
   Experimental:     false
  containerd:
@@ -470,3 +502,36 @@ Server: Docker Engine - Community
   GitCommit:        de40ad0
 ```
 
+- 配置镜像加速
+
+```shell
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://1gnvw4t1.mirror.aliyuncs.com"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+- 安装docker-compose
+
+```shell
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+如果需要安装其他版本的 Compose，请替换以上链接中的版本号v2.18.0
+
+将可执行权限应用于二进制文件
+```shell
+sudo chmod +x /usr/local/bin/docker-compose
+```
+创建软链
+```shell
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+测试是否安装成功
+```shell
+[root@ydgeiosz3bpsykjo ~]# docker-compose --version
+Docker Compose version v2.18.0
+```
