@@ -434,7 +434,7 @@ rm -rf /var/lib/docker
 
 - 安装docker
 
-Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker ，通过 uname -r 命令查看你当前的内核版本。如果内核版本较低可以尝试升级内核
+Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker ，通过 uname -r 命令查看你当前的内核版本。如果内核版本较低可以尝试升级内核，升级内核可参考：https://weblab.top/2023/05/28/update-centos-kernel/
 ```shell
 [root@ydgeiosz3bpsykjo ~]# uname -r
 3.10.0-1160.88.1.el7.x86_64
