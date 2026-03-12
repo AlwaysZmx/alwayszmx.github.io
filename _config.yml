@@ -129,14 +129,12 @@ quiet: false
 excerpt_separator: "\n\n"
 permalink: /:year/:month/:day/:title/
 plugins:
-    - jekyll-github-metadata
+    # - jekyll-github-metadata  # 注释掉以避免 GitHub API 速率限制
     - rouge
-#     - jekyll-html-pipeline
     - jekyll-paginate
     - jekyll-sitemap
     - jekyll-feed
     - jemoji
-#     - jekyll-mentions
 collections:
     wiki:
         output: true
